@@ -1,11 +1,11 @@
 
-var ore=0;
-var minuti=0;
-var secondi=0;
-var decimi=0;
-var visualizzazione="";
-var contatore_intertempi=0;
-var stop=1; //0=attivo 1=fermo
+let ore=0;
+let minuti=0;
+let secondi=0;
+let decimi=0;
+let visualizzazione="";
+let contatore_intertempi=0;
+let stop=1; //0=attivo 1=fermo
 
 function avvia(){
 if (stop==1){
