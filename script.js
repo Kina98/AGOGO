@@ -1,5 +1,3 @@
-// This code is a simple stopwatch with a countdown button for 5 minutes and other buttons for different durations.
-
 let [seconds, minutes, hours] = [60,0,0];
 let displayTime = document.getElementById("displayTime");
 let timer = null;
@@ -43,7 +41,6 @@ function startStopwatch(duration, countdown) {
         seconds = duration;
     }
 
-    // Vérifie que la durée est valide
 
     if (seconds < 0) {
         return;
@@ -70,7 +67,7 @@ function firstSec() {
     startStopwatch(20, true);
 }
 
-// Fonction pour gérer l'input
+
 
 function setDuration() {
     const duration = Number(document.getElementById("minute").value);
@@ -81,11 +78,11 @@ function setDuration() {
     }
 }
 
-// Code pour initialiser l'input
+
 
 document.getElementById("minute").addEventListener("change", setDuration);
 
-// Fonction pour corriger le problème des secondes et des minutes qui commencent à partir de 60
+
 
 function correctTime() {
     if (seconds === 0) {
@@ -93,6 +90,6 @@ function correctTime() {
     }
 }
 
-// Appel de la fonction pour corriger le problème des secondes et des minutes qui commencent à partir de 60
+
 
 setInterval(correctTime, 1000);
