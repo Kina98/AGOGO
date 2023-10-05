@@ -31,14 +31,8 @@ body {
     font-size: 18px;
 }
 
-#time {
+
+.stopWatch {
+    margin-top: 2rem;
     text-align: center;
-    margin-top: 20rem;
-    color: #fff;
-}
-#time #chronometre {
-    font-size: 5em;
-}
-#time button {
-    font-size: 2em;
 }

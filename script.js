@@ -1,49 +1,98 @@
+// This code is a simple stopwatch with a countdown button for 5 minutes and other buttons for different durations.
 
-let ore=0;
-let minuti=0;
-let secondi=0;
-let decimi=0;
-let visualizzazione="";
-let contatore_intertempi=0;
-let stop=1; //0=attivo 1=fermo
+let [seconds, minutes, hours] = [60,0,0];
+let displayTime = document.getElementById("displayTime");
+let timer = null;
 
-function avvia(){
-if (stop==1){
-stop=0;
-cronometro();}}
+function stopwatch() {
+    seconds--;
+    if (seconds < 0) {
+        seconds = 59;
+        minutes--;
+        if (minutes < 0) {
+            minutes = 59;
+            hours--;
+        }
+    }
 
-function cronometro(){
-  if (stop==0) {
-    decimi+=1;
-    if (decimi>9) {
-      decimi=0;
-      secondi+=1;
+    if (seconds === 0 && minutes === 0 && hours === 0) {
+        clearInterval(timer);
     }
-    if (secondi>59) {
-      secondi=0;
-      minuti+=1;
-    }
-    if (minuti>59) {
-      minuti=0;
-      ore+=1;
-    }
-    if (ore<10) {
-      visualizzazione="0" + ore;
-  } else {
-      visualizzazione=ore;
-    }
-    if (minuti<10) {
-      visualizzazione=visualizzazione + ":0" + minuti;
-  } else {
-      visualizzazione=visualizzazione + ":" + minuti;
-  }
-    if (secondi<10) {
-      visualizzazione=visualizzazione + ":0" + secondi;
-  } else {
-      visualizzazione=visualizzazione + ":" + secondi;
-  }
-    visualizzazione=visualizzazione;
-    document.getElementById("chronometre").innerText = visualizzazione;
-    setTimeout("cronometro()", 100);
-  }
+
+    displayTime.innerHTML = pad(hours) +":"+ pad(minutes) +":"+ pad(seconds);
 }
+
+function pad(number) {
+    return number < 10 ? "0" + number : number;
+}
+
+function startStopwatch(duration, countdown) {
+    if (timer != null) {
+        clearInterval(timer);
+    }
+
+    if (duration < 60) {
+        duration = 60;
+    }
+
+    seconds = duration;
+
+    timer = setInterval(stopwatch, 1000);
+
+    if (countdown) {
+        seconds = duration;
+    }
+
+    // Vérifie que la durée est valide
+
+    if (seconds < 0) {
+        return;
+    }
+}
+
+function cappuccino() {
+    startStopwatch(300, true);
+}
+
+function the15() {
+    startStopwatch(900, true);
+}
+
+function dejeuner20() {
+    startStopwatch(1200, true);
+}
+
+function dejeuner30() {
+    startStopwatch(1800, true);
+}
+
+function firstSec() {
+    startStopwatch(20, true);
+}
+
+// Fonction pour gérer l'input
+
+function setDuration() {
+    const duration = Number(document.getElementById("minute").value);
+    if (duration > 0) {
+        startStopwatch(duration * 60, true);
+    } else {
+        alert("La durée doit être positive.");
+    }
+}
+
+// Code pour initialiser l'input
+
+document.getElementById("minute").addEventListener("change", setDuration);
+
+// Fonction pour corriger le problème des secondes et des minutes qui commencent à partir de 60
+
+function correctTime() {
+    if (seconds === 0) {
+        seconds = 60;
+    }
+}
+
+// Appel de la fonction pour corriger le problème des secondes et des minutes qui commencent à partir de 60
+
+setInterval(correctTime, 1000);

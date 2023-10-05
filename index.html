@@ -10,22 +10,18 @@
 <body>
     <div class="container">
         <div id="buttons">
-            <button id="20-s">20 SECS</button>
-            <button id="cappucino">CAPPUCINO 5</button>
-            <button id="the-15">THE 15</button>
-            <button id="dejeuner-20">PETIT DEJEUNER 20</button>
-            <button id="dejeuner-30">DEJEUNER 30</button>
+            <button id="cappuccino" onclick="cappuccino()">CAPPUCINO 5</button>
+            <button id="the-15" onclick="the15()">THE 15</button>
+            <button id="dejeuner-20" onclick="dejeuner20()">PETIT DEJEUNER 20</button>
+            <button id="dejeuner-30" onclick="dejeuner30()">DEJEUNER 30</button>
+            <button id="20-secs" onclick="firstSec()">20 SECS</button>
         </div>
         <div id="agogo-input">
-            <input type="number" id="minute" placeholder="Enter time in minute">
+            <input type="number" id="minute" placeholder="Enter time in minutes">
         </div>
-        <!-- <div id="time">
-            <h1>00:00:00</h1>
-            <h3>Be Back AT 00:00:00</h3>
-        </div> -->
-        <div id="time">
-            <div id="chronometre">00:00:00</div>
-            <button onclick="avvia()"> Start</button>
+
+        <div class="stopWatch">
+            <h1 id="displayTime">00:00:00</h1>
         </div>
     </div>
 
