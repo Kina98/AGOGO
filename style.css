@@ -36,4 +36,7 @@ body {
 #timer {
     margin-top: 2rem;
     text-align: center;
+    color: white;
+    font-size: 50px;
+    font-weight: bold;
 }

@@ -89,19 +89,28 @@ function the15() {
   }
 
 
-  function setDuration() {
-      const duration = Number(document.getElementById("minute").value);
-      if (duration > 0) {
-          startStopwatch(duration * 60, true);
-      } else {
-          alert("La durée doit être positive.");
-      }
-  }
+function setDuration() {
+    let duration = Number(document.getElementById("minute").value);
+    if (duration > 0) {
+      let temps = duration * 60
+      const timerElement = document.getElementById("timer")
     
+    setInterval(() => {
+      let minutes = parseInt(temps / 60, 10)
+      let secondes = parseInt(temps % 60, 10)
     
+      minutes = minutes < 10 ? "0" + minutes : minutes
+      secondes = secondes < 10 ? "0" + secondes : secondes
     
-  document.getElementById("minute").addEventListener("change", setDuration);
-
+      timerElement.innerText = `00:${minutes}:${secondes}`
+      temps = temps <= 0 ? 0 : temps - 1
+    
+    }, 1000)
+    } else {
+        alert("La durée doit être positive.");
+    }
+}
+document.getElementById("minute").addEventListener("change", setDuration);
 
 
 
