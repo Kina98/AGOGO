@@ -1,111 +1,111 @@
 function firstSec() {
-  let temps = 20
+  let temps = 20;
   // let temps = departMinutes * 60
-  const timerElement = document.getElementById("timer")
+  const timerElement = document.getElementById("timer");
 
 setInterval(() => {
   // let minutes = parseInt(temps / 60, 10)
-  let secondes = parseInt(temps % 60, 10)
+  let secondes = parseInt(temps % 60, 10);
 
   // minutes = minutes < 10 ? "0" + minutes : minutes
-  secondes = secondes < 10 ? "0" + secondes : secondes
+  secondes = secondes < 10 ? "0" + secondes : secondes;
 
-  timerElement.innerText = `00:00:${secondes}`
-  temps = temps <= 0 ? 0 : temps - 1
+  timerElement.innerText = `00:00:${secondes}`;
+  temps = temps <= 0 ? 0 : temps - 1;
 
-}, 1000)
+}, 1000);
 }
 
 function cappuccino() {
-  let departMinutes = 5
-  let temps = departMinutes * 60
-  const timerElement = document.getElementById("timer")
+  let departMinutes = 5;
+  let temps = departMinutes * 60;
+  const timerElement = document.getElementById("timer");
 
 setInterval(() => {
-  let minutes = parseInt(temps / 60, 10)
-  let secondes = parseInt(temps % 60, 10)
+  let minutes = parseInt(temps / 60, 10);
+  let secondes = parseInt(temps % 60, 10);
 
-  minutes = minutes < 10 ? "0" + minutes : minutes
-  secondes = secondes < 10 ? "0" + secondes : secondes
+  minutes = minutes < 10 ? "0" + minutes : minutes;
+  secondes = secondes < 10 ? "0" + secondes : secondes;
 
-  timerElement.innerText = `00:${minutes}:${secondes}`
-  temps = temps <= 0 ? 0 : temps - 1
+  timerElement.innerText = `00:${minutes}:${secondes}`;
+  temps = temps <= 0 ? 0 : temps - 1;
 
-}, 1000)
+}, 1000);
 }
 
 function the15() {
-    let departMinutes = 15
-    let temps = departMinutes * 60
-    const timerElement = document.getElementById("timer")
+    let departMinutes = 15;
+    let temps = departMinutes * 60;
+    const timerElement = document.getElementById("timer");
   
   setInterval(() => {
-    let minutes = parseInt(temps / 60, 10)
-    let secondes = parseInt(temps % 60, 10)
+    let minutes = parseInt(temps / 60, 10);
+    let secondes = parseInt(temps % 60, 10);
   
-    minutes = minutes < 10 ? "0" + minutes : minutes
-    secondes = secondes < 10 ? "0" + secondes : secondes
+    minutes = minutes < 10 ? "0" + minutes : minutes;
+    secondes = secondes < 10 ? "0" + secondes : secondes;
   
-    timerElement.innerText = `00:${minutes}:${secondes}`
-    temps = temps <= 0 ? 0 : temps - 1
+    timerElement.innerText = `00:${minutes}:${secondes}`;
+    temps = temps <= 0 ? 0 : temps - 1;
   
-  }, 1000)
+  }, 1000);
   }
 
   function dejeuner20() {
-    let departMinutes = 20
-    let temps = departMinutes * 60
-    const timerElement = document.getElementById("timer")
+    let departMinutes = 20;
+    let temps = departMinutes * 60;
+    const timerElement = document.getElementById("timer");
   
   setInterval(() => {
-    let minutes = parseInt(temps / 60, 10)
-    let secondes = parseInt(temps % 60, 10)
+    let minutes = parseInt(temps / 60, 10);
+    let secondes = parseInt(temps % 60, 10);
   
-    minutes = minutes < 10 ? "0" + minutes : minutes
-    secondes = secondes < 10 ? "0" + secondes : secondes
+    minutes = minutes < 10 ? "0" + minutes : minutes;
+    secondes = secondes < 10 ? "0" + secondes : secondes;
   
-    timerElement.innerText = `00:${minutes}:${secondes}`
-    temps = temps <= 0 ? 0 : temps - 1
+    timerElement.innerText = `00:${minutes}:${secondes}`;
+    temps = temps <= 0 ? 0 : temps - 1;
   
-  }, 1000)
+  }, 1000);
   }
 
   function dejeuner30() {
-    let departMinutes = 30
-    let temps = departMinutes * 60
-    const timerElement = document.getElementById("timer")
+    let departMinutes = 30;
+    let temps = departMinutes * 60;
+    const timerElement = document.getElementById("timer");
   
   setInterval(() => {
-    let minutes = parseInt(temps / 60, 10)
-    let secondes = parseInt(temps % 60, 10)
+    let minutes = parseInt(temps / 60, 10);
+    let secondes = parseInt(temps % 60, 10);
   
-    minutes = minutes < 10 ? "0" + minutes : minutes
-    secondes = secondes < 10 ? "0" + secondes : secondes
+    minutes = minutes < 10 ? "0" + minutes : minutes;
+    secondes = secondes < 10 ? "0" + secondes : secondes;
   
-    timerElement.innerText = `00:${minutes}:${secondes}`
-    temps = temps <= 0 ? 0 : temps - 1
+    timerElement.innerText = `00:${minutes}:${secondes}`;
+    temps = temps <= 0 ? 0 : temps - 1;
   
-  }, 1000)
+  }, 1000);
   }
 
 
 function setDuration() {
-    let duration = Number(document.getElementById("minute").value);
+    let duration = Number(document.getElementById("minute").value);;
     if (duration > 0) {
-      let temps = duration * 60
-      const timerElement = document.getElementById("timer")
+      let temps = duration * 60;
+      const timerElement = document.getElementById("timer");
     
     setInterval(() => {
-      let minutes = parseInt(temps / 60, 10)
-      let secondes = parseInt(temps % 60, 10)
+      let minutes = parseInt(temps / 60, 10);
+      let secondes = parseInt(temps % 60, 10);
     
-      minutes = minutes < 10 ? "0" + minutes : minutes
-      secondes = secondes < 10 ? "0" + secondes : secondes
+      minutes = minutes < 10 ? "0" + minutes : minutes;
+      secondes = secondes < 10 ? "0" + secondes : secondes;
     
-      timerElement.innerText = `00:${minutes}:${secondes}`
-      temps = temps <= 0 ? 0 : temps - 1
+      timerElement.innerText = `00:${minutes}:${secondes}`;
+      temps = temps <= 0 ? 0 : temps - 1;
     
-    }, 1000)
+    }, 1000);
     } else {
         alert("La durée doit être positive.");
     }
